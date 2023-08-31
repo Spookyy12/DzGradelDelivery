@@ -39,11 +39,11 @@ class RegistrationTest {
         $("[data-test-id='city'] input").setValue("Мо");
         $$(".menu-item__control").findBy(text("Москва")).click();
         $("[data-test-id=date] input").click();
-        String data = generateDate(0, "MM");
+        String data = generateDate(3, "MM");
         String data2 = generateDate(7, "MM");
         String bookedDate = generateDate(7, "dd.MM.yyyy");
         if(data.equals(data2)) {
-            $$(".calendar__day").findBy(text(generateDate(3, "d"))).click();
+            $$(".calendar__day").findBy(text(generateDate(7, "d"))).click();
         }else {
             $$(".calendar__arrow_direction_right").last().click();
             $$(".calendar__day").findBy(text(generateDate(7, "d"))).click();
